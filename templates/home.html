@@ -10,18 +10,26 @@
         height:360px;
         width:100%;
         object-fit:cover;
+        margin-bottom:16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html'%}
+        <img class="img-fluid" src="static/banner.jpg" class="img-fluid" alt="...">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img class="img-fluid" src="static/banner.jpg" class="img-fluid" alt="...">
-    
-    <h2 class="text-center mt-2 mb-4">About us</h2>
+
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
     <p class="lead">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
+        </div>
+        <div class="d-none d-md-block col-6">
+              <img src="static/people.jpg" style="height:320px; border-radius:4px;">
+        </div>
+        </div>
     <h2 class="text-center mt-2 mb-4">Job Openings </h2>
     <div>
       {% for job  in jobs%}
@@ -29,9 +37,10 @@
       {% endfor %}
     </div>
       <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-    <p class="mt-4">Copyright 2023, Johnson Topno</p></div>
+    <a class="btn btn-primary btn-lg" href="mailto:johnsontopno.bhumca21@gmail.com?subject=Question%20about%20Job%20opening&body=My%20Name%3A%3CYour%20name%20Here%3E%0D%0AMy%20Resume%20Link%20%3A%3CResume%20Link%3E%0D%0AMy%20Question%3A%3C%20Enter%20Question%20Here%3E">Contact Us</a>
+    <!-- <p class="mt-4">Copyright 2023, Johnson Topno</p></div> -->
       </div>
+    {% include 'footer.html'%}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
 </html>
